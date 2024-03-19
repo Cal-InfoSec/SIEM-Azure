@@ -33,7 +33,7 @@ Now that our users our created, we'll deploy our Client Machine with the Win 10 
 
 [VM oracle App page](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/e6562eae-2e27-46c8-8c3a-fd655818d5f0)
 sources.
- 3. **Step 3**:Once Downloaded, the application page should look like this.
+ 3. **Step 3**: Once Downloaded, the application page should look like this.
  
  ![Win Installation Media Web Page](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/1b9de1c8-51c0-4f62-88b2-cd12cdbf63e0)
  4. **Step 4**: Next we'll need to download our ISO file or our Operating System we're going to virtualize. We will be virtualizing a [Windows 10 OS.](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
@@ -72,7 +72,29 @@ sources.
 14. **Step 14**: Then in the Power setting of your VM, Shut down the VM. Go to your Virtual Box Manager App and start your Machine Back up. should notice a seamless integration of inputs. To Input "Ctrl+Alt+Delete" into the VM. Located at the top of your VM window is an Input Tab, Click the tab then select keyboard and "Ctrl+Alt+Delete". At  this part of the Project, your Home Lab is considered complete. However from here on will be setting up our active directory which will utilize the VM as a Domain Controller.
 
 ## Setting up Active Directory
+![Screenshot 2024-03-18 220823](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/a4f14804-ec9c-4e19-a0b5-fb6cf7aa7a47)
 
-15. **Step 15**:  
-16. **Step 16**:
+15. **Step 15**: Next we're going to go into our DC's Setting within the Virtual Box Manager Page and add an additional Network adapter. On the Adapter 2 settings attach it to Internal Network option. Once set click OK. The DC should be updated to now show two Ethernet connection. 
+    - Referring back to the Diagram we're going to have our DC have two Network Interface Cards. The first Adapter will have NAT enabled which will connect our DC to our Internet. The second Adapter will be our Internal Network to connect all our client VMs.
+
+16. **Step 16**: Going back into our DC VM, We're going Rename both our DC VM and our two NICs. To Rename your PC, going into the Settings App and in the 
+
 17. **Step 17**:
+
+18. **Step 18**:
+
+19. **Step 19**:
+
+20. **Step 20**:
+
+21. **Step 21**:
+
+22. **Step 22**:
+
+23. **Step 23**:
+
+24. **Step 24**:
+
+25. **Step 25**:
+
+26. **Step 26**:
