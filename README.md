@@ -90,7 +90,7 @@ Now that our users our created, we'll deploy our Client Machine with the Win 10 
 ![Screenshot 2024-03-18 225616](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/8fb4475a-c06f-4b4f-8a3e-9ea8ebafec32)
 19. **Step 19**: Now that we've established which NIC is which. We're going to Assign our Internal NIC an IP address. Now refering back to our Diagram, We'll be assign our Internal NIC all the same Addresses listed. the IP, Mask, DNS. You'll notice that Gateway is empty. This is due to our DC will eventually act as a DHCP once Active Directory is installed. To access the NIC's IP settings, right click on the icon and select properties > then select "Internet Protocol Version 4". Once there fill in all fields to match the Diagram. Click Ok once all fields are filled in. 
 
-20. **Step 20**:
+20. **Step 20**: 
 
 21. **Step 21**:
 
