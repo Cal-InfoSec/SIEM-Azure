@@ -30,10 +30,8 @@ Now that our users our created, we'll deploy our Client Machine with the Win 10 
 ![VM custom set up](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/eeace1f8-334b-4a4d-af6c-a071b940170d)   
  2. **Step 2**: Once Downloaded, Click next which will take you to the custom set up page which you can use to better utilize your systems re!
    - For instance, if you don't have enough storage on your C: Drive or Main Drive, install the application on another drive. Sometimes you may miss some dependencies on your system and have to download additional items. Allow the Setup programm to download these dependencies and follow through with the set up.
-
-[VM oracle App page](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/e6562eae-2e27-46c8-8c3a-fd655818d5f0)
-sources.
- 3. **Step 3**: Once Downloaded, the application page should look like this.
+ ![Screenshot 2024-03-17 151331](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/695a4fcd-1216-4e47-b4ee-fab958a3030d)
+3. **Step 3**: Once Downloaded, the application page should look like this.
  
  ![Win Installation Media Web Page](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/1b9de1c8-51c0-4f62-88b2-cd12cdbf63e0)
  4. **Step 4**: Next we'll need to download our ISO file or our Operating System we're going to virtualize. We will be virtualizing a [Windows 10 OS.](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2019)
@@ -77,13 +75,20 @@ sources.
 15. **Step 15**: Next we're going to go into our DC's Setting within the Virtual Box Manager Page and add an additional Network adapter. On the Adapter 2 settings attach it to Internal Network option. Once set click OK. The DC should be updated to now show two Ethernet connection. 
     - Referring back to the Diagram we're going to have our DC have two Network Interface Cards. The first Adapter will have NAT enabled which will connect our DC to our Internet. The second Adapter will be our Internal Network to connect all our client VMs.
 
-16. **Step 16**: Going back into our DC VM, We're going Rename both our DC VM and our two NICs. To Rename your PC, going into the Settings App and in the 
+![image](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/b3d46a9d-6d5d-4f06-b28d-91d36a44c5cc)
+16. **Step 16**: Going back into our DC VM, We're going Rename both our DC VM and our two NICs. To Rename your PC, going into the Settings App and in the Search Bar Type "About Your PC" this will Pull up a page for you to Scroll down and Click the "Rename PC" Button and Rename the PC to DC then Restart your computer immediately. 
+ - Renaming your PC and NIC helps later in the long run when configuring Active Directory. 
 
-17. **Step 17**:
+![image](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/f75dabcd-af63-49c3-bf0d-e5c4c65099fc)
+17. **Step 17**: Once DC VM is rebooted and your logged in. Go back into Settings and into  the Network and Settings Tab > then on the left select Ethernet> then click "Change Adapter Options." This Page should display to Similar Icons one Named Ethernet and the Other Named Ethernet 2. To distinguish the NAT NIC and the Internal NIC we're going to right click on one of them to view the IPv4 Address.
 
-18. **Step 18**:
+![Screenshot 2024-03-18 222240](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/4e6b7834-d6d4-4412-8b55-b35e132a0864)
+18. **Step 18**: To tell the difference between an Internal connections vs Internet Connection is the IPv4 address. To look into each NICs IP details, double click on of the Ethernet options the Click "Details". Shown Above is the Internal Network due to it being Assigned an APIPA Address. Since we know which NIC is which. Let's Rename each one to their respective connections by Right Clicking on each one> selecting Rename. I suggest Renaming each one to the nature of their connection.
+    - An Internal network will have an APIPA Address, which is assigned by DHCP if the PC cannot connect to the Internet. I.E IPv4: 169.254.0.1
+    - An NAT/ Internet connected Network will have a Public IP as well as your Internet Company's DNS Server connected. I.E IPv4: 10.0.2.15
 
-19. **Step 19**:
+![Screenshot 2024-03-18 225616](https://github.com/Cal-InfoSec/SIEM-Azure/assets/81139563/8fb4475a-c06f-4b4f-8a3e-9ea8ebafec32)
+19. **Step 19**: Now that we've established which NIC is which. We're going to Assign our Internal NIC an IP address. Now refering back to our Diagram, We'll be assign our Internal NIC all the same Addresses listed. the IP, Mask, DNS. You'll notice that Gateway is empty. This is due to our DC will eventually act as a DHCP once Active Directory is installed. To access the NIC's IP settings, right click on the icon and select properties > then select "Internet Protocol Version 4". Once there fill in all fields to match the Diagram. Click Ok once all fields are filled in. 
 
 20. **Step 20**:
 
